@@ -106,6 +106,33 @@ describe("About Functions", function () {
       // An internal comment
       return a * b;
     };
-    expect(multiply.toString()).toBe(FILL_ME_IN);
+
+    let newLineChar = "\u000d\n";
+    let str = "function (a, b) {" + newLineChar +
+      "      // An internal comment" + newLineChar +
+      "      return a * b;" + newLineChar +
+      "    }";
+
+    // Debugging / Investigation
+    // let a = multiply.toString();
+    // let b = str; // str.slice(1);
+
+    // let diff = false;
+    // for (let i = 10; i < a.length; i++) {
+    //   if (a[i] !== b[i]) {
+    //     diff = true;
+    //     console.log(`i: ${i}`);
+    //     console.log(`%${a[i]}% !== #${b[i]}#`);
+
+    //     console.log(a.codePointAt(i));
+    //     console.log(b.codePointAt(i));
+
+    //     console.log("--------");
+    //     // break;
+    //   }
+    // }
+    // console.log("diff:", diff);
+
+    expect(multiply.toString()).toBe(str);
   });
 });
