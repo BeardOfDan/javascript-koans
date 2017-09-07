@@ -92,18 +92,12 @@ describe("About Applying What We Have Learnt", function () {
   });
 
   it("should count the ingredient occurrence (functional)", function () {
-    // chain the products array
     let ingredientCount = _.chain(products)
-      // make an array of the ingredients arrays
       .map(function (product) {
         return product.ingredients;
       })
-      // flatten it into a single array
       .flatten()
-      // replace repititions with an incremented count
       .reduce(function (newArr, name, i, []) {
-        // because it does not seem to let me initialize the iterator
-        // instead it initializes newArr to the first value of the flattened array
         if (!Array.isArray(newArr)) {
           newArr = new Array(newArr);
         }
@@ -118,26 +112,26 @@ describe("About Applying What We Have Learnt", function () {
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
+
   it("should find the largest prime factor of a composite number", function () {
-  
+
   });
 
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-    
+
   });
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-      
-    
+
+
   });
 
   it("should find the difference between the sum of the squares and the square of the sums", function () {
-    
+
   });
 
   it("should find the 10001st prime", function () {
 
   });
-  */
+
 });
